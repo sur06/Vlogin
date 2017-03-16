@@ -24,67 +24,88 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static com.example.girivi.vlogin.Appconfig.Forgot_URL;
+public class Reset extends AppCompatActivity implements View.OnClickListener{
 
-public class Forgot extends AppCompatActivity implements View.OnClickListener{
-
-    //public static final String Forgot_URL = "http://triphpe.16mb.com/forgotpass.php";
+    public static final String Forgot_URL = "http://triphpe.16mb.com/reset.php";
 
     public static final String KEY_EMAIL="email";
+    public static final String KEY_PASS="pass";
 
-    private EditText forgot;
+    private EditText enter;
+    private EditText confirm;
     private Button submit;
 
-    private String email;
+    private String Enter;
+    private String Pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot);
+        setContentView(R.layout.activity_reset);
 
-        forgot = (EditText) findViewById(R.id.etforgot);
-        submit= (Button) findViewById(R.id.btnsubmit);
+        enter = (EditText) findViewById(R.id.etentered);
+        confirm = (EditText) findViewById(R.id.etconfirm);
+        submit= (Button) findViewById(R.id.reset);
 
 
         submit.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
-        forget();
+
+
+        Enter = enter.getText().toString().trim().toLowerCase();
+        Pass = confirm.getText().toString().trim().toLowerCase();
+
+
+        if(Enter!=""||Pass!=""){
+            if(Enter.equals(Pass)){
+
+                reset();
+            }
+            else{
+                Toast.makeText(getApplicationContext(),"password didn't match",Toast.LENGTH_LONG).show();
+            }
+
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Please fill both fields",Toast.LENGTH_LONG).show();
+        }
+
+
+
     }
 
 
-    private void forget() {
-        email = forgot.getText().toString().trim().toLowerCase();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Appconfig.Forgot_URL,
+    private void reset() {
+        Enter = enter.getText().toString().trim().toLowerCase();
+        Pass = confirm.getText().toString().trim().toLowerCase();
+        Bundle extras = getIntent().getExtras();
+        final String userEmail= extras.getString("KEY");
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Forgot_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        String res = response;
-                        int len = response.length();
-                        if(len == 6){
-                            Intent i = new Intent(getApplicationContext(),Verify.class);
-                            i.putExtra("OTP", res);
-                            i.putExtra("EMAIL", email);
-                            startActivity(i);
-                        }
-                        else {
 
-                            Toast.makeText(Forgot.this, response, Toast.LENGTH_LONG).show();
-                        }
 
+                        Toast.makeText(Reset.this, response, Toast.LENGTH_LONG).show();
                     }
+
+
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Forgot.this,error.toString(),Toast.LENGTH_LONG ).show();
+                        Toast.makeText(Reset.this,error.toString(),Toast.LENGTH_LONG ).show();
                     }
                 }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> map = new HashMap<String,String>();
-                map.put(KEY_EMAIL,email);
+                map.put(KEY_EMAIL,userEmail);
+                map.put(KEY_PASS,Pass);
+
                 return map;
             }
         };
@@ -92,6 +113,5 @@ public class Forgot extends AppCompatActivity implements View.OnClickListener{
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
 
 }

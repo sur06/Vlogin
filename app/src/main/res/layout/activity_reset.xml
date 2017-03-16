@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.girivi.vlogin.Reset">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Reset Password"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="cursive"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Your New Password"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+        android:fontFamily="cursive"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter New password"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/etentered" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:id="@+id/etconfirm"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:layout_width="300dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/reset"
+        android:onClick="reset"/>
+
+</LinearLayout>

@@ -21,7 +21,9 @@
         </activity>
         <activity android:name=".Splash" />
         <activity android:name=".Register" />
-        <activity android:name=".Forgot"></activity>
+        <activity android:name=".Forgot" />
+        <activity android:name=".Verify" />
+        <activity android:name=".Reset"></activity>
     </application>
 
 </manifest>
