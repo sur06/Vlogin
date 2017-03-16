@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.girivi.vlogin.Register">
+    <TextView
+        android:text="Register"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_height="40dp"
+        android:id="@+id/textView4"
+        android:fontFamily="cursive" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="30dp"
+        android:inputType="textPersonName"
+        android:hint="Enter Name"
+        android:background="#ECEFF1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:id="@+id/edname"
+        style="@android:style/Widget.DeviceDefault.Light.AutoCompleteTextView"
+        android:fontFamily="sans-serif" />
+
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="30dp"
+        android:inputType="textEmailAddress"
+        android:hint="Enter EmailID"
+        android:background="#ECEFF1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/edemail"
+        style="@android:style/Widget.AutoCompleteTextView"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="30dp"
+        android:inputType="textPersonName"
+        android:hint="Enter password"
+        android:background="#ECEFF1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/edpassword"
+        style="@android:style/Widget.DeviceDefault.Light.EditText"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="30dp"
+        android:inputType="textPersonName"
+        android:hint="Enter Family Name"
+        android:background="#ECEFF1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/edfname"
+        style="@android:style/Widget.EditText"/>
+
+
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="35dp"
+        android:inputType="date"
+        android:hint="Enter Date of Birth"
+        android:background="#ECEFF1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/eddob" />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="35dp"
+        android:hint="Enter Gender"
+        android:background="#ECEFF1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/edgen"/>
+    <Button
+        android:text="Register"
+        android:layout_marginTop="40dp"
+        android:layout_width="200dp"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:background="#37474F"
+        android:layout_height="wrap_content"
+        android:id="@+id/btregister"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:fontFamily="sans-serif" />
+
+    <TextView
+        android:text="Registered!!Then Login "
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:onClick="log"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8" />
+
+
+</LinearLayout>

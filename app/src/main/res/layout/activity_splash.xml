@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.girivi.vlogin.Splash">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:layout_height="400dp"
+        android:background="@drawable/loadinganimated"
+        />
+
+    <TextView
+        android:text="Loading!!.."
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/textView2" />
+
+
+</LinearLayout>
